@@ -18,8 +18,35 @@ public class Util {
     // Check user selection and return 1 if error & 0 if all OK
     public static int userSelection(String text) {
 
-        if(text.length() != 1) return 1;
+        if(text.length() > 2) return 1;
+        
+        switch (Character.toLowerCase(text.charAt(0))) {
+            case 'h':
+                showHelpMenu();
+                break;
+        
+            case 'l': 
+                // GIRAR IZQUIERDA
+                break;
 
+            case 'r':
+                //GIRAR DERECHA
+                break;
+
+            case 'f': 
+                // PASSA ENDEVANT
+                break;
+
+            case 'n': // !CAMBIAR ESTO TIENE QUE SER UN NÚMERO
+                if(!(text.length() == 2) || !(Character.toLowerCase(text.charAt(1)) == 'f')) return 1;
+            
+            case 'q':
+                // SORTIR
+                break;
+            default:
+                return 1;
+        }
+        return 0;
     }
 
 
