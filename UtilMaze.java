@@ -18,7 +18,7 @@ public class UtilMaze {
         
     }
 
-    public static void readMaze(String path) throws IOException{
+    public static String[] readMaze(String path) throws IOException{
         FileReader fR = new FileReader(path);
         BufferedReader reader = new BufferedReader(fR);
         String line = reader.readLine();
@@ -27,6 +27,7 @@ public class UtilMaze {
             System.out.println(size[i]);
         }
         reader.close();
+        return size;
     }
     
 }
