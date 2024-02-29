@@ -15,44 +15,30 @@ public class Util {
         println("H: Mostra aquest text d'ajuda");
     }
 
-    // Check user selection and return 1 if error & 0 if all OK
-    public static int userSelection(String text) {
-
-        if(text.length() > 2) return 1;
-        
-        switch (Character.toLowerCase(text.charAt(0))) {
-            case 'h':
-                showHelpMenu();
+    public static String userInput(String input){
+        String movementPlayer="";
+        int o =0;
+        for(int i= 0; i< input.length(); i++){
+            if(o>=input.length()){
                 break;
-        
-            case 'l': 
-                // GIRAR IZQUIERDA
-                break;
-
-            case 'r':
-                //GIRAR DERECHA
-                break;
-
-            case 'f': 
-                // PASSA ENDEVANT
-                break;
-
-            case 'n': // !CAMBIAR ESTO TIENE QUE SER UN NÚMERO
-                if(!(text.length() == 2) || !(Character.toLowerCase(text.charAt(1)) == 'f')) return 1;
+            }
+            if(Character.isDigit(input.charAt(o))){
+                String num = Character.toString(input.charAt(o));
+                for(int p=0;p<Integer.parseInt(num);p++){
+                    movementPlayer+=input.charAt(o+1);
+                }
+                o++;
+            }
+            else{
+                movementPlayer+=input.charAt(o);
+            }
             
-            case 'q':
-                // SORTIR
-                break;
-            default:
-                return 1;
+            o++;
         }
-        return 0;
+        return movementPlayer;
     }
-
-
+    
     public static void println(String text){ 
         System.out.println(text); // Function to short System.out.println on String outputs
     } 
-
-
 }

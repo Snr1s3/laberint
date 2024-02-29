@@ -1,0 +1,17 @@
+Part1
+    Arrencar el programa per jugar per linia de comandes //fet
+    Fer Capçalera del programa  //fet
+    Ús d'opcions
+    Abandonament de la partida amb un missatge
+
+Part 2
+    Moviment per al laberint 
+
+Part 3 
+    Guardar records per els laberints
+
+Part 4 
+    Creador de laberints
+
+Part 5
+    Validador de Laberints

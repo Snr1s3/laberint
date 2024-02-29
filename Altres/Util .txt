@@ -1,0 +1,72 @@
+public class Util {
+    
+    public static void showHelpMenu(){
+        println("Les opcions disponibles són:");
+        println("H: Mostra aquest text d'ajuda");
+        println("L: gira a l'esquerra");
+        println("R: gira a la dreta");
+        println("F: mou una passa endavant");
+        println("nF: mou n passes endavant");
+        println("Q: Sortir");
+    }
+    public static void printHead(){
+        println("Joc del laberint");
+        println("================");
+        println("H: Mostra aquest text d'ajuda");
+    }
+
+    // Check user selection and return 1 if error & 0 if all OK
+    public static int userSelection(String text) {
+
+        if(text.length() > 2) return 1;
+        
+        switch (Character.toLowerCase(text.charAt(0))) {
+            case 'h':
+                showHelpMenu();
+                break;
+        
+            case 'l': 
+                // GIRAR IZQUIERDA
+                break;
+
+            case 'r':
+                //GIRAR DERECHA
+                break;
+
+            case 'f': 
+                // PASSA ENDEVANT
+                break;
+
+            case 'n': // !CAMBIAR ESTO TIENE QUE SER UN NÚMERO
+                if(!(text.length() == 2) || !(Character.toLowerCase(text.charAt(1)) == 'f')) return 1;
+            
+            case 'q':
+                // SORTIR
+                break;
+            default:
+                return 1;
+        }
+        return 0;
+    }
+
+    public static boolean mazeExist(String path){
+        return false;
+        
+    }
+
+    public static boolean checkExtension(String text, String extension){
+        for(int i = 0; i < text.length(); i++){
+            if(text.charAt(i) == '.'){
+                
+            }
+        }
+        return false;
+    }
+
+
+
+
+    public static void println(String text){ 
+        System.out.println(text); // Function to short System.out.println on String outputs
+    } 
+}

@@ -5,11 +5,14 @@ import java.io.File;
 public class UtilMaze {
     
     public static void showMaze(String path, int intents){ //Check if the file exists and show the  maze stats(name, tries, solved or not))
+        
+        
         System.out.println();
         System.out.println("Laberint: "+ path);
         Util.println("Encara no resolt");
         System.out.println();
-        Util.println("Intents actuals: "+intents); 
+        Util.println("Intents actuals: "+intents);
+        
     }
 
     public static char[][] readMaze(String path) throws IOException{ //Read the maze from a file
@@ -27,8 +30,7 @@ public class UtilMaze {
             }
             //System.out.println();
         }
-        //printMaze( maze);
-        fR.close();
+        printMaze( maze);
         reader.close();
         return maze;
     }
