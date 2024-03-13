@@ -17,28 +17,33 @@ public class Util {
 
     public static String userInput(String input){
         String movementPlayer="";
-        int o =0;
+        int letterPosition =0;
         for(int i= 0; i< input.length(); i++){
-            if(o>=input.length()){
-                break;
-            }
-            if(Character.isDigit(input.charAt(o))){
-                String num = Character.toString(input.charAt(o));
+            if(letterPosition>=input.length()) break;
+            
+            if(Character.isDigit(input.charAt(letterPosition))){
+                String num = Character.toString(input.charAt(letterPosition));
+                if(Character.isDigit(input.charAt(letterPosition+1))){
+
                 for(int p=0;p<Integer.parseInt(num);p++){
-                    movementPlayer+=input.charAt(o+1);
+                    movementPlayer+=input.charAt(letterPosition+1);
                 }
-                o++;
+                letterPosition++;
             }
             else{
-                movementPlayer+=input.charAt(o);
+                movementPlayer+=input.charAt(letterPosition);
             }
-            
-            o++;
+            letterPosition++;
         }
         return movementPlayer;
     }
     
     public static void println(String text){ 
         System.out.println(text); // Function to short System.out.println on String outputs
-    } 
+    }
+
+    public static void prova(String input){
+        
+    }
+
 }
